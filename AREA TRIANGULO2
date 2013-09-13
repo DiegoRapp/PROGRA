@@ -1,0 +1,29 @@
+// AreaTriangulo2
+// Alumno: Diego Rapp de Melo e Silva
+// Fecha: 06/09/2013
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int main()
+{int b,h;
+
+float Area;
+cout << "introduzir el valor de la base b:\n\n";
+cin >> b;
+
+cout << "introduzir el valor de altura h:\n\n";
+cin >> h;
+
+cout << "La Area del triangulo es:\n\n";
+Area= (b*h)/2;
+
+cout << Area;
+
+getch ();
+
+	return 0;
+}
