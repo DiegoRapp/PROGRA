@@ -1,0 +1,40 @@
+// supermercado.cpp: define el punto de entrada de la aplicación de consola.
+// Autor: Diego Rapp de Melo e Silva
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+
+void main()
+
+{float TOTAL, precio1, precio2, precio3, cant1, cant2, cant3;
+cout<< "ingrese precio1:\n\n";
+cin>> precio1;
+
+cout<< "\n\ningrese cant1:\n\n";
+cin>> cant1;
+
+cout<< "\n\ningrese precio2:\n\n";
+cin>> precio2;
+
+cout<< "\n\ningrese cant2:\n\n";
+cin>> cant2;
+
+cout<< "\n\ningrese precio3:\n\n";
+cin>> precio3;
+
+cout<< "\n\ningrese cant3:\n\n";
+cin>> cant3;
+
+
+TOTAL= precio1*cant1+precio2*cant2+precio3*cant3;
+cout<< "\n\nEL TOTAL A PAGAR ES:\n\n";
+cout<< TOTAL;
+
+getch();
+
+
+}
