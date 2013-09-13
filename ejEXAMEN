@@ -1,0 +1,30 @@
+// examem.cpp : Defines the entry point for the console application.
+// Autor: Diego Rapp de Melo e Silva
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int main()
+{
+int I,n;
+float k,i;
+cout<< "introduzir I:\n\n";
+cin>>I;
+cout<< "\n\n introduzir i:\n\n";
+cin>> i;
+cout<< "\n\n introduzir n:\n\n";
+cin>> n;
+
+k=I/(i*n/360);
+
+cout<<"\n\nEL VALOR DE K ES:\n\n";
+cout<<k;
+
+getch();
+
+	return 0;
+}
+
