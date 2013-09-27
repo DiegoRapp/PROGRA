@@ -1,0 +1,47 @@
+// CINE
+// Autor: Diego Rapp de Melo e Silva		
+// Fecha: 27/09/2013	
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+
+void main()
+{int I, N, edad;
+float precio, S, pago;
+
+S=0;
+cout<<"\ningrese el numero de Butacas:\n\n";
+cin>>N;
+
+cout<<"\ningrese el precio de Butacas:\n\n";
+cin>>precio;
+
+for (I=1;I<=N;I++)
+{
+  do
+  {
+	cout<<"\ningrese edad:\n\n";
+    cin>>edad;
+  }
+  while((edad<0)||(edad>150));
+
+	  if (edad<=12)
+		  pago =precio*0.5;
+	  else
+		  if(edad<=55)
+			  pago =precio;
+		  else pago=precio*0.2;
+
+   S=S+pago;
+}
+cout<<"\nEl ingrese TOTAL es:\n\n";
+cout<<S;
+
+getch();
+
+}
+
