@@ -1,0 +1,30 @@
+// PromedioNMientras.cpp 
+// Autor: Diego Rapp de Melo e Silva
+// Fecha: 11/10/2013
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int main()
+{float n,s,c,dato,prom;
+cout<< " ingresar la cantidad de datos n:";
+cin>> n;
+s=0;
+c=0;
+while (c<n)
+{
+	cout<< "ingrese datos:";
+	cin>> dato;
+	s=s+dato;
+	c=c+1;
+}
+prom = s/n;
+cout<< " encontrar promedio:"<<prom;
+getch();
+
+	return 0;
+}
+
