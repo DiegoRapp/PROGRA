@@ -1,0 +1,31 @@
+// PromRepetir
+// Autor: Diego Rapp		
+// Fecha: 11/10/2013
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+
+void main()
+{float n,s,c,dato,prom;
+cout<<"ingrese la cantidad de datos a ingresar:";
+cin>>n;
+s=0;
+c=0;
+do
+{
+	cout<<"ingrese dato:";
+cin>>dato;
+s=s+dato;
+c=c+1;
+}
+while (c<n);
+prom=s/n;
+cout<<"el promedio es:"<<prom;
+getch();
+
+
+}
