@@ -1,0 +1,31 @@
+// Propina.cpp : Defines the entry point for the console application.
+// Autor: Diego Rapp de Melo e Silva	
+// Fecha: 20/09/2013
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{float c,x;
+cout<< " ingresar valor consumido:";
+cin>> c;
+
+if (150<=c)
+
+x=c*0.01;
+
+else
+
+x=c*0.02;
+
+cout<<"\n\n LA PROPINA DEL MESERO EN Bs ES:";
+cout<<x;
+
+getch();
+
+
+}
+
