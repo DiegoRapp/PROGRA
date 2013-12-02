@@ -1,0 +1,43 @@
+// ejercicio5.cpp : Practico numero 4
+// Autor: Diego Rapp de Melo e Silva			
+// Fecha: 20/09/2013
+
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int main()
+{
+    int EP1,EP2,EP3,EF,P ,Pr;
+
+    float S, N;
+    cout<< "ingrese nota del primer parcial\n";
+    cin>> EP1;
+
+    cout<<"ingrese nota del segundo parcial\n";
+    cin>> EP2;
+
+    cout<<"ingrese nota del tercer parcial\n";
+    cin>>EP3;
+
+    cout<< "ingrese nota del proyecto\n";
+    cin>> P;
+
+    cout<< "ingrese nota practica\n";
+    cin>> Pr;
+
+    cout<< "ingresar nota de Examen Final\n";
+    cin>> EF;
+
+       S=((EP1*0.15)+(EP2*0.15)+(EP3*0.15)+(EF*0.3)+(P*0.15)+(Pr*0.10));
+
+             
+	   cout<< S;
+
+       getch();
+
+    return 0;
+} 
