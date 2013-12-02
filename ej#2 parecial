@@ -1,0 +1,36 @@
+// ej2examen.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std; 
+
+int arearectangulo(int base,int altura);
+
+int main()
+{  int b,h,area,n;
+
+   cout<<"ingrese numero de rectangulos:";
+   cin>>n;
+     
+   for(int i=1;1<=n;i++)
+   { cout<<"\n\ningrese base:";
+	 cin>>b;
+	 cout<<"\ningrese altura:";
+	 cin>>h;
+
+	 area=arearectangulo(b,h);
+
+	 cout<<"\nLa area del rectangulo es igual a:";
+	 cout<<area;
+   }
+	 getch();
+	return 0;
+}
+int arearectangulo(int base,int altura)
+{ 
+	int a=base*altura;
+return a;
+}
