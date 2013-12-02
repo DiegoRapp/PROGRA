@@ -1,0 +1,50 @@
+// Menus
+// Autor: Diego Rapp de Melo e Silva	
+// Fecha: 04/10/2013
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+
+
+void main()	
+
+{float a,b,c,x1,x2,x,D;
+
+
+cout<< " Ingresar valor de a;\n\n";
+cin>> a;
+
+cout<< "ingresar el valor de b;\n\n";
+cin>> b;
+
+cout<<" Ingresar el valor de c;\n\n";
+cin>> c;
+
+if (a==0)
+{
+	 x=-c/b;
+	 cout <<x;
+}
+else
+{ D=b*b-4*b*c;
+}
+
+if (D>=0)
+{
+ x1=-b/(2*a)+ sqrt(D)/2*a;
+  cout<<x1;
+ x2= -b/(2*a)- sqrt(D)/2*a;
+  cout<<x2;
+}
+else
+{
+	cout<<"soluciones inmaginarias:";
+}
+getch();
+
+}
+
