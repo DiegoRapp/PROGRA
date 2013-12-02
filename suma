@@ -1,0 +1,23 @@
+// prog suma.cpp: define el punto de entrada de la aplicación de consola.
+// Diego Rapp de Melo e Silva
+
+#include "stdafx.h"
+
+
+int main (void)
+
+{float A,B,C,X; int N,i;
+scanf_s("%d",&N);
+i=1;
+while (i<=N)
+{scanf_s("%f%f%f",&A,&B,&C);
+if(A!=0)
+{X=(C-B)/A;
+printf("X= %10.2f",X);}
+else
+{printf("A debe ser distinto de cero");}
+i=i+1;
+}
+	return 0;
+}
+
