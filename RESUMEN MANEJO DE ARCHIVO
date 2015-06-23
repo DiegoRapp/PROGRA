@@ -1,0 +1,93 @@
+Declaración del alias del archivo
+Para realizar programas de manejo de archivos en Lenguaje C++ se requiere el encabezado “Standard I/O” y se necesita incluirlo de la sig. forma:
+#include <stdio.h>
+además es necesario declarar una variable de tipo FILE que opere como el apuntador a la estructura del archivo (alias), esto se logra con la sig. línea:
+FILE*alias:
+Validar la apertura de un archivo
+Algunas funciones requieren la existencia del archivo para realizar operaciones, por ello es necesario verificar que cuando se intenta abrir un archivo haya tenido éxito la operación. Si un archivo no se puede abrir, la función fopen devuelve el valor de 0 (cero), definido como NULL en stdio.h. 
+#include <stdio.h>
+FILE*alias:
+Alias=fopen(“ejemplo.dat”,”rb”);
+If(alias==NULL)
+{
+Cout<< “\n\r No se puede abrir el archivo!!!”;
+Getch();
+Return();
+}
+
+
+
+Cierre de archivos usando fclose() y fcloseall()
+
+Antes de dejar de utilizar un archivo es necesario cerrarlo. Esto se logra mediante las funciones fclose o fcloseall. Si se usa fclosees necesario indicarle el alias del archivo que se desea cerrar. La función fcloseall cierra todos los archivos abiertos. 
+
+Escritura de registros usando fwrite()
+
+La función fwrite proporciona el mecanismo para almacenar todos los campos de un registro en un archivo. Cabe destacar que al utilizar esta función, se almacena una variable (de tipo struct) que representa un bloque de datos o campos; es decir, no se almacena campo por campo. Esta función tiene cuatro argumentos: la variable que se desea grabar, su tamaño en bytes, la cantidad de variables y el alias del archivo donde se desea almacenar . 
+
+FILE*alias
+Struct tipo_registro
+{
+     Int no_prod;
+     Char descrip[30];
+     Int cantidad;
+     Float precio;
+     Char garantía;
+};
+Struct tipo_registro Registro;
+
+Fwrite(&Registro,sizeof(Registro),1,alias);
+
+/// la función fwrite graba el registro en la dirección fisica
+
+
+Vaciando los buffers con fflush()
+
+Un buffer es un área de almacenamiento temporal en memoria para el conjunto de datos leídos o escritos en el archivo. Estos buffers retienen datos en tránsito desde y hacia al archivo y tienen la finalidad de hacer más eficiente las operaciones de entrada/salida en los archivos de disco, provocando menor cantidad de accesos, los cuales son más lentos que la memoria. P. ejem. Si se requiere consultar constantemente un dato del archivo, no es necesario calcular su dirección física, reposicionar el apuntador del archivo, “cargar” el dato en memoria mediante una operación de lectura cada vez que se necesita, sino que el sistema operativo controla y mantiene este dato en los buffers de memoria y de ahí lo toma cuando lo requiera. Sólo hay una consideración importante al utilizar los buffers, los datos escritos en ellos no se reflejan exactamente en los archivos de disco en forma inmediata, sino hasta que se “vacía” el buffer. Para ello se utiliza la función fflushy basta enviarle el alias del archivo como argumento. Los buffers también se vacían cuando se cierra el archivo. 
+Lectura de registros usando fread()
+
+La función fread permite “cargar” todos los campos de un registro en un archivo, es decir, lee un registro y lo copia en la memoria RAM. Esta función tiene los mismos argumentos que la función fwrite. 
+
+“LA FUNCION SIZEOF CALCULA EL TAMANO DE UNA VARIABLE O ESTRUCTURA.”
+
+Reposicionando el apuntador mediante fseek()
+
+Para comprender la operación de esta función es necesario estar relacionado con el apuntador del archivo, el cual indica la posición dentro del archivo. Cuando se abre un archivo en modo de sólo lectura, sólo escritura o lectura/escritura, el apuntador del archivo se posiciona al inicio del mismo y cuando un archivo se abre en modo agregar se posiciona al final, sin embargo, se puede reposicionar este apuntador del archivo mediante la función fseek. También es importante mencionar que cada vez que se realiza una operación de lectura o de escritura de cualquier tipo de datos (caracter, cadena, estructura, etc.), el apuntador del archivo se mueve al final de dicho dato, de tal forma que está posicionado en el siguiente, por lo que es muy importante asegurarse que se encuentre en la posición deseada antes de realizar cualquier operación. 
+
+Puntos de referencia de la función fseek()
+
+El último argumento de la función fseek es conocido como el punto de referencia o el modo y se refiere desde dónde se iniciará el conteo de bytes determinado por la dirección física.
+
+
+
+Puntos de referencia -SEEK_SET    : Desde el principio del archivo
+                                   -SEEK_CUR   : Desde la posición actual del apuntador del archivo
+                                   -SEEK_END   : Desde el final del archivo
+
+
+Fseek(alias,dir_fisica,seek_set);
+
+
+
+
+
+
+Conociendo la posición del apuntador del archivo con la función ftell()
+
+Se usa la función ftellpara conocer la posición actual del apuntador de un archivo abierto. La posición se expresa en bytes (dirección física) contados desde el principio del archivo.
+
+Long int dir_fisica;
+
+Dir_fisica=ftell(alias)
+
+Detectando el final del archivo con feof()
+
+Se usa el macro feof()(definido en stdio.h) para determinar si se ha encontrado el final de un archivo. Si se encuentra el final de un archivo, devuelve un valor diferente de cero y cero en caso contrario. Para invocarlo es necesario colocar el alias del archivo abierto como argumento. Se utiliza mucho esta función en recorridos de tipo secuencial
+
+Cambiando nombres de archivos mediante rename()
+
+Esta función tiene como objetivo cambiar el nombre de un archivo o subdirectorio especificado por su ruta de acceso. Sólo necesita dos argumentos: el nombre anterior del archivo y el nuevo nombre. Es importante destacar que esta función sólo puede aplicarse a archivos cerrados.
+
+Eliminando archivos con la función remove()
+
+La función remove elimina definitivamente un archivo especificando su nombre. Es importante destacar que esta función sólo puede aplicarse a archivos cerrados
